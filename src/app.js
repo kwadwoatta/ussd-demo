@@ -13,6 +13,7 @@ app.get('*', (req, res) => {
 });
 
 app.post('*', (req, res) => {
+    let numberFormat = new RegExp('^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$')
     let { sessionId, serviceCode, phoneNumber, text } = req.body;
     if (text == '') {
         let response = (
@@ -40,8 +41,8 @@ app.post('*', (req, res) => {
     }
     // check if entry after 2 is a phone number
     else if (text == `2*${numberFormat}`) {
-        // let concatNumber = text.trimLeft('2*');
-        let concatNumber = text;
+        let concatNumber = text.trimLeft('2*');
+        // let concatNumber = text;
         let response = (
             `CON ${concatNumber}`
         )
