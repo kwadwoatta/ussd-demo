@@ -34,7 +34,15 @@ app.post('*', (req, res) => {
     }
     else if (text == '2') {
         let response = (
-            `END Your phone number is ${phoneNumber}`
+            `CON Enter your phone number`
+        )
+        res.send(response);
+    }
+    // check if entry after 2 is a phone number
+    else if (text == `2*${numberFormat}`) {
+        let concatNumber = text.trimLeft('2*');
+        let response = (
+            `CON ${concatNumber}`
         )
         res.send(response);
     }
