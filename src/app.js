@@ -34,6 +34,7 @@ app.post('*', (req, res) => {
         let response = (
             `END Your phone number is ${phoneNumber}`
         )
+        res.send(response);
     }
     else if (text == '1*1') {
         let accountNumber = 'ACC1001';
