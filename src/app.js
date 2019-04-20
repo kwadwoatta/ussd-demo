@@ -19,9 +19,7 @@ app.post('*', (req, res) => {
         let response = (
             `CON What would you want to choose?
             1. My Account
-            2. My Phone Number
-            5. ${sessionId}
-            6. ${serviceCode}`
+            2. My Phone Number`
         )
         res.send(response);
     }
