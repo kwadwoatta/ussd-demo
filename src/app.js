@@ -40,7 +40,8 @@ app.post('*', (req, res) => {
     }
     // check if entry after 2 is a phone number
     else if (text == `2*${numberFormat}`) {
-        let concatNumber = text.trimLeft('2*');
+        // let concatNumber = text.trimLeft('2*');
+        let concatNumber = text;
         let response = (
             `CON ${concatNumber}`
         )
